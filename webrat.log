@@ -1,0 +1,11 @@
+# Logfile created on 2011-05-26 20:59:53 +0100 by logger.rb/25413
+REQUESTING PAGE: GET /projects/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /projects/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /projects with {"utf8"=>"\xE2\x9C\x93", "project"=>{"title"=>"", "status"=>"", "outcome"=>""}, "commit"=>"Create Project"} and HTTP headers {"HTTP_REFERER"=>"/projects/new"}
+REQUESTING PAGE: GET /projects/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /projects with {"utf8"=>"\xE2\x9C\x93", "project"=>{"title"=>"", "status"=>"", "outcome"=>""}, "commit"=>"Create Project"} and HTTP headers {"HTTP_REFERER"=>"/projects/new"}
+REQUESTING PAGE: GET /projects/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /projects with {"utf8"=>"\xE2\x9C\x93", "project"=>{"title"=>"", "status"=>"", "outcome"=>""}, "commit"=>"Create Project"} and HTTP headers {"HTTP_REFERER"=>"/projects/new"}
+REQUESTING PAGE: GET /projects/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /projects with {"utf8"=>"\xE2\x9C\x93", "project"=>{"title"=>"Example Project", "status"=>"live", "outcome"=>"Example description"}, "commit"=>"Create Project"} and HTTP headers {"HTTP_REFERER"=>"/projects/new"}
+REQUESTING PAGE: GET http://www.example.com/projects/1 with {} and HTTP headers {"HTTP_REFERER"=>"/projects"}

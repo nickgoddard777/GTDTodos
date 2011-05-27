@@ -20,5 +20,32 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @title = @project.title
   end
+
+  def edit
+    @project = Project.find(params[:id])
+    @title = "Edit project"
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    if @project.update_attributes(params[:project])
+      flash[:success] = "Project updated."
+      redirect_to @project
+    else
+      @title = "Edit project"
+      render 'edit'
+    end
+  end
+
+  def index
+    @projects = Project.paginate(:page => params[:page])
+    @title = "All projects"
+  end
+
+  def destroy
+    Project.find(params[:id]).destroy
+    flash[:success] = "Project deleted."
+    redirect_to projects_path
+  end
 end
 

@@ -159,3 +159,11 @@ div.field, div.actions {
   list-style: square;
 }
 
+ul.projects {
+    margin-top: 1em;
+}
+
+.projects li {
+    list-style: none;
+}
+

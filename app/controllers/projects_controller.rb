@@ -38,14 +38,16 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.paginate(:page => params[:page])
+    @projects = Project.all
     @title = "All projects"
   end
 
   def destroy
     Project.find(params[:id]).destroy
-    flash[:success] = "Project deleted."
-    redirect_to projects_path
+    respond_to do |format|
+      format.html { redirect_to(projects_path) }
+      format.js { render :text => "alert('project has been deleted')" }
+    end
   end
 end
 

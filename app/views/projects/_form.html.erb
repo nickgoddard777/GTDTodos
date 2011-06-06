@@ -1,19 +1,33 @@
-<%= form_for @project do |f| %>
-  <%= render 'shared/error_messages', :object => f.object %>
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.select(:status, ["live","complete","archived"] ) %>
-  </div>
-  <div class="field">
-    <%= f.label :outcome %>
-    <%= f.text_area :outcome %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class="grid_6 first">
+  <%= form_for(@project,  :html => {:id=>"form", :class=>"form widget", :novalidate=>"novalidate"}) do |f| %>
+    <header>
+      <h2><%= form_title %></h2>
+    </header>
+    <section>
+      <%= render 'shared/error_messages', :object => f.object %>
+      <fieldset>
+        <dl>
+          <dt></dt>
+          <dd>
+            <%= f.label :title %>
+            <%= f.text_field :title, :required => "required" %>
+          </dd>
+          <dt></dt>
+          <dd>
+            <%= f.label :status %>
+            <%= f.select(:status, ["live","complete","archived"] ) %>
+          </dd>
+          <dt></dt>
+          <dd>
+            <%= f.label :outcome %>
+            <%= f.text_area :outcome, :required => "required" %>
+          </dd>
+        </dl>
+      </fieldset>
+      <hr>
+      <%= f.submit :class => "button button-blue" %>
+      <%= link_to 'Back', projects_path, :class => "button button-gray" %>
+    </section>
+  <% end %>
+</div>
 

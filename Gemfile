@@ -4,6 +4,7 @@ gem 'rails', '3.0.7'
 gem 'rake', '~> 0.8.7'
 gem 'devise'
 gem 'will_paginate', '3.0.pre2'
+gem 'jquery-rails', '>= 0.2.6'
 
 group :development do
   gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'

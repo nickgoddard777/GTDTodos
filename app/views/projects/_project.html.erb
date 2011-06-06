@@ -1,5 +1,6 @@
-<li>
-  <%= link_to project.title, project %>
-   | <%= link_to 'delete', project, :method => :delete, :confirm => "You sure?", :title => "Delete #{project.title}" %>
-</li>
+<tr>
+  <td><%= link_to project.title, project %></td>
+  <td><%= project.status %></td>
+  <td><%= link_to 'delete', project, :method => :delete, :confirm => "You sure?", :remote => true %></td>
+</tr>
 

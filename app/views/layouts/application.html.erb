@@ -1,24 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title><%= title %></title>
     <%= csrf_meta_tag%>
     <%= render :partial => "layouts/stylesheets" %>
-    <%= javascript_include_tag :defaults %>
+    <%= render :partial => "layouts/javascripts" %>
+    <%= yield :head %>
   </head>
   <body>
-    <div class="container">
+    <div id="wrapper">
       <%= render :partial => "layouts/header" %>
-      <section class="round">
-        <% flash.each do |key, value| %>
-          <div class="flash <%= key %>"><%= value %></div>
-        <% end %>
-        <%= yield %>
-      </section>
-      <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
+      <section id="content">
+        <div class="wrapper">
+          <section class="grid_6 first">
+            <% flash.each do |key, value| %>
+              <div class="flash <%= key %>"><%= value %></div>
+            <% end %>
+            <%= yield %>
+          </section>
+          <aside class="grid_2 top">
 
-     </div>
+          </aside>
+          <div class="clear"></div>
+        </div>
+        <div id="push"></div>
+      </section>
+    </div>
+    <footer id="page-footer">
+      <div id="footer-inner">
+        <p class="wrapper">
+          <span style="float: right">
+            <%= link_to "About", about_path %>
+             | <%= link_to "Contact", contact_path %>
+          </span>
+          &copy; 2011 All rights reserved. <a href="http://www.simplapps.co.uk/">SimplApps</a>.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
 

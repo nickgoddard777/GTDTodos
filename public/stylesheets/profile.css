@@ -1,0 +1,68 @@
+.profilelist td, .companylist td{
+	vertical-align:middle;
+}
+.profilelist .photo, .companylist .photo {
+	border: 1px solid #ccc;
+    height: 50px;
+    width: 50px;
+    padding:5px;
+}
+
+.profilelist .detail {
+	width:300px;
+}
+
+.profilelist .detail .name, .companylist .detail .name {
+	font-size:16px;
+	line-height:20px;
+}
+
+.profilelist .detail .contacts{
+	color: #666666;
+}
+	
+.profilelist .title {
+	font-size:12px;
+}
+
+.profileedit tr input {
+	width:70%;	
+}
+
+.profileedit tr.person_name input{
+	font-size:18px;
+	font-weight:bold;
+}	
+
+.profileedit tr.person_name td{
+	padding-bottom:15px;
+}
+.profile_upload_photo .photo_box {
+	float:left;
+	padding:12px 14px;
+	text-align:center;
+	width:60px;
+	background-color:#EFEFEF;
+	-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+}
+.profile_action_list {
+	list-style-type: none;
+    padding: 0;
+}
+.profile_action_list li a {
+    display: block;
+    line-height: 20px;
+    padding-left: 20px;
+}
+.profile_action_list li.delete a {
+    background: transparent url(../images/bin-metal.png) no-repeat left;
+}
+.profile_action_list li.download a {
+    background: transparent url(../images/drive-download.png) no-repeat left;
+}
+.profile_action_list li.upload a {
+    background: transparent url(../images/drive-upload.png) no-repeat left;
+}

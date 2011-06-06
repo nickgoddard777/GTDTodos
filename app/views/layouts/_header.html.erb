@@ -1,17 +1,23 @@
-<header>
-  <% logo = image_tag("logo.png", :alt => "GTDTodos", :class => "round") %>
-  <%= link_to logo, root_path %>
-  <nav class="round">
-    <ul>
-      <li><%= link_to 'Home', root_path %></li>
-      <li><%= link_to 'Projects', projects_path %></li>
-      <% if user_signed_in? %>
-        <li>Signed in as <%= current_user.email %>. Not you?
-        <%= link_to 'Sign out', destroy_user_session_path %></li>
-      <% else %>
-        <li><%= link_to 'Sign in', new_user_session_path %></li>
-      <% end %>
-    </ul>
-  </nav>
+<header id="page-header">
+  <div class="wrapper">
+    <div id="util-nav">content</div>
+    <% logo = image_tag("logo.png", :alt => "GTDTodos", :class => "round") %>
+    <%= link_to logo, root_path %>
+    <nav id="main-nav">
+      <ul class="clearfix">
+        <li class="active"><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Projects', projects_path %></li>
+        <% if user_signed_in? %>
+          <li class="fr">Signed in as <%= current_user.email %>. Not you?
+          <%= link_to 'Sign out', destroy_user_session_path %></li>
+        <% else %>
+          <li class="fr"><%= link_to 'Sign in', new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+  <div id="page-subheader">
+    <div class="wrapper clearfix">content</div>
+  </div>
 </header>
 

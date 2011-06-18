@@ -3,7 +3,7 @@
   <td><%= todo.status %></td>
   <td><%= todo.description %></td>
   <td><%= todo.next_action %></td>
-  <td><%= todo.project.title %></td>
+  <td><% if todo.project.blank? %> <% else %><%= todo.project.title %><% end %></td>
   <td><%= link_to 'delete', todo, :method => :delete, :confirm => "You sure?", :remote => true %></td>
 </tr>
 

@@ -7,30 +7,24 @@
       <%= render 'shared/error_messages', :object => f.object %>
       <fieldset>
         <dl>
-          <dt></dt>
-          <dd>
+          <dt></dt><dd>
             <%= f.label :title %>
             <%= f.text_field :title, :required => "required" %>
           </dd>
-          <dt></dt>
-          <dd>
-            <%= f.label :status %>
-            <%= f.select(:status, ["live","complete","archived"] ) %>
+          <dt></dt><dd>
+            <%= f.hidden_field :status, :value => "live"%>
           </dd>
-          <dt></dt>
-          <dd>
+          <dt></dt><dd>
             <%= f.label :description %>
-            <%= f.text_area :description, :required => "required" %>
+            <%= f.text_area :description %>
           </dd>
-          <dt></dt>
-          <dd>
+          <dt></dt><dd>
             <%= f.label :next_action %>
             <%= f.check_box :next_action %>
           </dd>
-          <dt></dt>
-          <dd>
-            <%= f.label :project %>
-            <%= f.collection_select(:project_id, Project.all, :id, :title, {:include_blank => true} ) %>
+          <dt></dt><dd>
+            <%= f.label :project_id %>
+            <%= f.collection_select(:project_id, Project.all, :id, :title, {:include_blank => true} )%>
           </dd>
         </dl>
       </fieldset>

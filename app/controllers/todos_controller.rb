@@ -10,6 +10,11 @@ class TodosController < ApplicationController
   def show
     @todo = Todo.find(params[:id])
     @title = @todo.title
+    if @todo.project.blank?
+      @project_title = ""
+    else
+      @project_title = @todo.project.title
+    end
   end
 
   def new

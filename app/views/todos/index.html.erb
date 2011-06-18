@@ -2,21 +2,25 @@
   <div class="grid_6 first">
     <h3>All todo's</h3>
     <hr>
-    <table class="datatable paginate sortable full">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Status</th>
-          <th>Description</th>
-          <th>Next Action</th>
-          <th>Project</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render @todos %>
-      </tbody>
-    </table>
+    <% form_tag complete_todos_path, :method => :put do %>
+      <table class="datatable paginate sortable full">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Description</th>
+            <th>Next Action</th>
+            <th>Project</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @todos %>
+        </tbody>
+      </table>
+      <%= submit_tag "Mark as complete", :class => "button button-blue" %>
+    <% end -%>
   </div>
 </div>
 <div class="columns leading">

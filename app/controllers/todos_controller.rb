@@ -33,6 +33,11 @@ class TodosController < ApplicationController
     end
   end
 
+  def complete
+    Todo.update_all("status = 'completed'",:id => params[:todo_ids])
+    redirect_to todos_path
+  end
+
   :private
 
     def menu

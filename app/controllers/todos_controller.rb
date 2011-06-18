@@ -28,6 +28,11 @@ class TodosController < ApplicationController
     end
   end
 
+  def complete
+    #TODO mark selected actions as complete
+    redirect_to todos_path
+  end
+
   :private
 
     def menu

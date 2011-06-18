@@ -15,6 +15,8 @@ class Project < ActiveRecord::Base
 
   attr_accessible :title, :status, :outcome
 
+  has_many :todos
+
   validates   :title,       :presence => true,
                             :length => { :maximum => 50 }
   validates   :status,      :presence => true

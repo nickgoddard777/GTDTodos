@@ -1,0 +1,43 @@
+<div class="grid_6 first">
+  <%= form_for(@todo,  :html => {:id=>"form", :class=>"form widget", :novalidate=>"novalidate"}) do |f| %>
+    <header>
+      <h2><%= form_title %></h2>
+    </header>
+    <section>
+      <%= render 'shared/error_messages', :object => f.object %>
+      <fieldset>
+        <dl>
+          <dt></dt>
+          <dd>
+            <%= f.label :title %>
+            <%= f.text_field :title, :required => "required" %>
+          </dd>
+          <dt></dt>
+          <dd>
+            <%= f.label :status %>
+            <%= f.select(:status, ["live","complete","archived"] ) %>
+          </dd>
+          <dt></dt>
+          <dd>
+            <%= f.label :description %>
+            <%= f.text_area :description, :required => "required" %>
+          </dd>
+          <dt></dt>
+          <dd>
+            <%= f.label :next_action %>
+            <%= f.check_box :next_action %>
+          </dd>
+          <dt></dt>
+          <dd>
+            <%= f.label :project %>
+            <%= f.collection_select(:project_id, Project.all, :id, :title, {:include_blank => true} ) %>
+          </dd>
+        </dl>
+      </fieldset>
+      <hr>
+      <%= f.submit :class => "button button-blue" %>
+      <%= link_to 'Back', todos_path, :class => "button button-gray" %>
+    </section>
+  <% end %>
+</div>
+

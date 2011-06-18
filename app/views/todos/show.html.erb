@@ -1,0 +1,17 @@
+<div class="columns top">
+  <div class="grid_6 first">
+    <div class="panel">
+      <header>
+        <h2><%= @todo.title %></h2>
+      </header>
+      <section>
+        <p>Status: <%= @todo.status %></p>
+        <p>Description: <%= @todo.description %></p>
+        <p>Next Action: <%= @todo.next_action %></p>
+        <p>Project: <%= @todo.project.title %></p>
+      </section>
+    </div>
+  </div>
+</div>
+<div class="clear">&nbsp;</div>
+

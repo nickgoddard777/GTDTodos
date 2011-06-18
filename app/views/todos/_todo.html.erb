@@ -1,0 +1,9 @@
+<tr>
+  <td><%= link_to todo.title, todo %></td>
+  <td><%= todo.status %></td>
+  <td><%= todo.description %></td>
+  <td><%= todo.next_action %></td>
+  <td><%= todo.project.title %></td>
+  <td><%= link_to 'delete', todo, :method => :delete, :confirm => "You sure?", :remote => true %></td>
+</tr>
+

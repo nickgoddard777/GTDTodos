@@ -5,6 +5,7 @@ GTDTodos::Application.routes.draw do
   match '/about',   :to => 'pages#about'
 
   resources :projects
+  resources :todos
 
   root :to => "pages#home"
 

@@ -13,3 +13,11 @@ Factory.define :user do |user|
   user.password "test1234"
 end
 
+Factory.define :todo do |todo|
+  todo.title "ring garage"
+  todo.description "ring the garage on 01709887766"
+  todo.status "live"
+  todo.next_action true
+  todo.association :project
+end
+

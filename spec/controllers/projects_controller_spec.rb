@@ -38,7 +38,7 @@ describe ProjectsController do
 
     it "should include the project's title" do
       get :show, :id => @project
-      response.should have_selector("h1", :content => @project.title)
+      response.should have_selector("h2", :content => @project.title)
     end
 
     it "should include the project's status" do
@@ -190,17 +190,8 @@ describe ProjectsController do
 
     it 'should have an element for each product' do
       @projects[0..2].each do |project|
-        response.should have_selector("li", :content => project.title)
+        response.should have_selector("td", :content => project.title)
       end
-    end
-
-    it 'should paginate projects' do
-      response.should have_selector("div.pagination")
-      response.should have_selector("span.disabled", :content => "Previous")
-      response.should have_selector("a", :href => "/projects?page=2",
-                                         :content => "2")
-      response.should have_selector("a", :href => "/projects?page=2",
-                                         :content => "Next")
     end
   end
 

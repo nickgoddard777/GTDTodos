@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
 
+  before_filter :menu
+
   def new
     @project = Project.new
     @title = "New project"
@@ -49,5 +51,11 @@ class ProjectsController < ApplicationController
       format.js { render :text => "alert('project has been deleted')" }
     end
   end
+
+  :private
+
+    def menu
+      @menuoption = "project"
+    end
 end
 

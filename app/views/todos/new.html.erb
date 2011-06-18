@@ -1,0 +1,8 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'forms' %>
+<% end -%>
+
+<div class="columns top">
+  <%= render :partial => "form", :locals => {:form_title => @title} %>
+</div>
+

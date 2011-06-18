@@ -1,0 +1,28 @@
+<div class="columns leading">
+  <div class="grid_6 first">
+    <h3>All todo's</h3>
+    <hr>
+    <table class="datatable paginate sortable full">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Description</th>
+          <th>Next Action</th>
+          <th>Project</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @todos %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="columns leading">
+  <div class="grid_6 first">
+    <%= link_to 'New todo', new_todo_path, :class => "button button-blue"%>
+  </div>
+</div>
+<div class="clear">&nbsp</div>
+

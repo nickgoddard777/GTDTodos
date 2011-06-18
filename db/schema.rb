@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110525063042) do
+ActiveRecord::Schema.define(:version => 20110607225910) do
+
+  create_table "actions", :force => true do |t|
+    t.integer  "project_id"
+    t.boolean  "next_action"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status"
+  end
+
+  add_index "actions", ["project_id"], :name => "index_actions_on_project_id"
 
   create_table "projects", :force => true do |t|
     t.string   "title"
@@ -19,6 +31,18 @@ ActiveRecord::Schema.define(:version => 20110525063042) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "todos", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "next_action"
+    t.string   "status"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "todos", ["project_id"], :name => "index_todos_on_project_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

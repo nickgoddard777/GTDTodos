@@ -5,9 +5,9 @@
     <%= link_to logo, root_path %>
     <nav id="main-nav">
       <ul class="clearfix">
-        <li <% if @menuoption == 'home' %>class="active"<% end %> ><%= link_to 'Home', root_path %></li>
-        <li <% if @menuoption == 'project' %>class="active"<% end %> ><%= link_to 'Projects', projects_path %></li>
-        <li <% if @menuoption == 'todo' %>class="active"<% end %> ><%= link_to 'Actions', todos_path %></li>
+        <li <% if menuoption == 'home' %>class="active"<% end %> ><%= link_to 'Home', root_path %></li>
+        <li <% if menuoption == 'project' %>class="active"<% end %> ><%= link_to 'Projects', projects_path %></li>
+        <li <% if menuoption == 'todo' %>class="active"<% end %> ><%= link_to 'Actions', todos_path %></li>
         <% if user_signed_in? %>
           <li class="fr">Signed in as <%= current_user.email %>. Not you?
           <%= link_to 'Sign out', destroy_user_session_path %></li>
@@ -21,7 +21,7 @@
     <div class="wrapper">
       <nav id="sub-nav">
         <ul>
-          <%= render "submenus/"+@menuoption %>
+          <%= render "submenus/" + menuoption %>
         </ul>
       </nav>
       <input placeholder="Search..." type="text" name="q" value="" />

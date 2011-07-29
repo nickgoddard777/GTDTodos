@@ -8,5 +8,11 @@ module ApplicationHelper
       "#{base_title} | #{@title}"
     end
   end
+
+  def menuoption
+    @menuoption ||= "home"
+    menuoption = @menuoption
+  end
+
 end
 

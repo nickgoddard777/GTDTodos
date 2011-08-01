@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 
   before_filter :menu
+  before_filter :authenticate_user!, :except => [ :index ]
 
   def new
     @project = Project.new

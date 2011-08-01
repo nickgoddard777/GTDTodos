@@ -22,12 +22,21 @@
 #
 
 class User < ActiveRecord::Base
+  has_and_belongs_to_many :roles
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :confirmable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :role_ids
+
+  def get_non_admin_roles
+    @non_admin_roles = Role.where("name <> ?", "admin")
+  end
+
+  def role?(role)
+    return !!self.roles.find_by_name(role)
+  end
 end
 

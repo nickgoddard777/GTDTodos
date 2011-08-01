@@ -15,6 +15,13 @@
   <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></p>
 
+  <p>
+    <% for role in Role.where("name <> ?", "admin") -%>
+      <%= check_box_tag "user[role_ids][]", role.id, resource.roles.include?(role) %>
+      <%= role.name %>
+    <% end -%>
+  </p>
+
   <p><%= f.submit "Update" %></p>
 <% end %>
 
@@ -23,3 +30,4 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
 
 <%= link_to "Back", :back %>
+

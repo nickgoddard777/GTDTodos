@@ -6,6 +6,7 @@ class Ability
 
     if user.role? :admin
       can :manage, :all
+      can :see_timestamps, User
     elsif user.role? :paid_user
       can :manage, Project do |project|
         project.try(:user) == user
@@ -13,6 +14,7 @@ class Ability
       can :manage, Todo do |todo|
         todo.try(:user) == user
       end
+      can :see_timestamps, User, :id => user.id
     elsif user.role? :free_user
       can :manage, Project do |project|
         project.try(:user) == user
@@ -20,6 +22,7 @@ class Ability
       can :manage, Todo do |todo|
         todo.try(:user) == user
       end
+      can :see_timestamps, User, :id => user.id
     end
   end
 end

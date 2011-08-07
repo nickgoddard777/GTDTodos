@@ -1,0 +1,13 @@
+<p><%= f.label :email %></p>
+<p><%= f.text_field :email %></p>
+
+<% if can? :read, Role %>
+	<p><%= f.label :role %></p>
+	<ul class="no-pad no-bullets">
+	  <% for role in Role.where("name <> ?", "admin") -%>
+      <%= check_box_tag "user[role_ids][]", role.id, f.roles.include?(role) %>
+      <%= role.name %>
+    <% end -%>
+	</ul>
+<% end %>
+

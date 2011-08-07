@@ -2,9 +2,11 @@ GTDTodos::Application.routes.draw do
   resources :roles
 
   devise_for :users
+  resources :users
 
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
+  match '/pricing', :to => 'pages#pricing'
 
   resources :projects
   resources :todos do

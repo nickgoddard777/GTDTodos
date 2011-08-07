@@ -20,11 +20,13 @@ require 'spec_helper'
 
 describe RolesController do
 
+  login_admin
+
   # This should return the minimal set of attributes required to create a valid
   # Role. As you add validations to Role, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {:name => "admin"}
   end
 
   describe "GET index" do
@@ -155,3 +157,4 @@ describe RolesController do
   end
 
 end
+

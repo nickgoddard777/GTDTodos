@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110607225910
+# Schema version: 20110729213302
 #
 # Table name: todos
 #
@@ -11,6 +11,7 @@
 #  project_id  :integer
 #  created_at  :datetime
 #  updated_at  :datetime
+#  user_id     :integer
 #
 
 class Todo < ActiveRecord::Base

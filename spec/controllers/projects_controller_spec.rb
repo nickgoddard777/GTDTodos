@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe ProjectsController do
   render_views
+  login_paid_user
 
   describe "GET 'new'" do
     it "should be sucessful" do

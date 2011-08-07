@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110729213302) do
+ActiveRecord::Schema.define(:version => 20110807173735) do
 
   create_table "actions", :force => true do |t|
     t.integer  "project_id"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(:version => 20110729213302) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "roles", ["name"], :name => "index_roles_on_name", :unique => true
 
   create_table "roles_users", :id => false, :force => true do |t|
     t.integer "role_id"

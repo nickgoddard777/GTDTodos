@@ -13,10 +13,10 @@
   <%= f.password_field :password_confirmation %></p>
 
   <p>
-    <% for role in Role.where("name <> ?", "admin") -%>
-      <%= check_box_tag "user[role_ids][]", role.id, resource.roles.include?(role) %>
-      <%= role.name %>
-    <% end -%>
+    <%= params[:plan] %>
+  </p>
+  <p>
+    <%= f.hidden_field( :role_id, :value => params[:plan]) %>
   </p>
 
   <p><%= f.submit "Sign up" %></p>

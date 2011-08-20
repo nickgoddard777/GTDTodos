@@ -3,11 +3,12 @@ require 'spec_helper'
 describe Project do
 
   before(:each) do
+    @user = Factory(:paid_user)
     @attr = { :title=>"Get MOT", :status => "live", :outcome => "Get MOT Certificate"}
   end
 
   it "should create a new instance given valid examples" do
-    Project.create!(@attr)
+    @user.projects.create!(@attr)
   end
 
   it "should require a title" do
@@ -30,6 +31,22 @@ describe Project do
   it "should require an outcome" do
     no_outcome_project = Project.new(@attr.merge(:outcome => ""))
     no_outcome_project.should_not be_valid
+  end
+
+  describe 'user associations' do
+
+    before(:each) do
+      @project = @user.projects.create(@attr)
+    end
+
+    it 'should have a user attribute' do
+      @project.should respond_to(:user)
+    end
+
+    it 'should have the right associated user' do
+      @project.user_id.should == @user.id
+      @project.user.should == @user
+    end
   end
 end
 

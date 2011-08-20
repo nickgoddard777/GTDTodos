@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(params[:project])
+    @project = current_user.projects.build(params[:project])
     if @project.save
       flash[:success] = "Project created successfully"
       redirect_to @project
@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = Project.where(:user_id => current_user.id)
     @title = "All projects"
   end
 

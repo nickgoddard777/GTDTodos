@@ -1,33 +1,35 @@
-<div>
-  <div>
+<% content_for :head do %>
+ <%= stylesheet_link_tag 'pricing' %>
+<% end %>
+
+<h1></h1>
+<span class="subTitle"></span>
+<div class="pricing_items">
+  <div class="pricing_item">
     <h1>Free</h1>
-    <h2>£0 a month</h2>
+    <h2>$0 a month</h2>
     <h3></h3>
     <ul class="list">
-      <li></li>
-      <li></li>
+      <li>10 Live Projects</li>
+      <li>1 Review per Week</li>
+      <li>1 Process per day</li>
     </ul>
-    <%= link_to '',  %>
+    <div class="signup">
+      <%= link_to 'Sign Up', new_user_registration_path(:plan => 3), :class => "button button-blue" %>
+    </div>
   </div>
-  <div>
+  <div class="pricing_item">
     <h1>Paid</h1>
-    <h2>£9.99 a month</h2>
+    <h2>$9.99 a month</h2>
     <h3></h3>
     <ul class="list">
-      <li></li>
-      <li></li>
+      <li>Unlimited Projects</li>
+      <li>Unlimited Reviews</li>
+      <li>Unlimited Processes</li>
     </ul>
-    <%= link_to '',  %>
-  </div>
-  <div>
-    <h1></h1>
-    <h2></h2>
-    <h3></h3>
-    <ul class="list">
-      <li></li>
-      <li></li>
-    </ul>
-    <%= link_to '',  %>
+    <div class="signup">
+      <%= link_to 'Sign Up', new_user_registration_path(:plan => 2), :class => "button button-blue" %>
+    </div>
   </div>
 </div>
 

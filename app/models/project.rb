@@ -17,10 +17,12 @@ class Project < ActiveRecord::Base
   attr_accessible :title, :status, :outcome
 
   has_many :todos
+  belongs_to :user
 
   validates   :title,       :presence => true,
                             :length => { :maximum => 50 }
   validates   :status,      :presence => true
   validates   :outcome,     :presence => true
+  validates   :user_id,     :presence => true
 end
 

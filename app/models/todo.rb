@@ -19,6 +19,7 @@ class Todo < ActiveRecord::Base
   attr_accessible :title, :description, :status, :next_action, :project_id
 
   belongs_to :project
+  belongs_to :user
 
   validates :title,         :presence => true,
                             :length => { :maximum => 50 }
